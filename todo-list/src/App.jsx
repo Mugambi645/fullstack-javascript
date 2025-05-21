@@ -1,3 +1,6 @@
+import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
+
 const { useState } = require("react");
 
 function App() {
@@ -25,8 +28,9 @@ function App() {
 
   return (
     <div style={{ padding: 20}}>
-      <h1>To-O List</h1>
-      
+      <h1>To-DO List</h1>
+      <TodoInput task={task} setTask={setTask} onAdd={handleAddTodo}/>
+      <TodoList todos={todos} onDelete={handleDelete} onToggle={handleToggle}/>
     </div>
   )
 }
